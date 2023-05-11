@@ -184,4 +184,5 @@ function FinalCleanDelete() {
     if (totalsRow > -1) {
       sheet.insertRowsBefore(totalsRow, 1);
     }
+  }
 };
