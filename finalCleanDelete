@@ -1,0 +1,187 @@
+function FinalCleanDelete() {
+  var spreadsheet = SpreadsheetApp.getActive();
+  spreadsheet.getRange('C:C').activate();
+  spreadsheet.getActiveRangeList().clear({contentsOnly: true, skipFilteredRows: true});
+  spreadsheet.getActiveSheet().deleteColumns(spreadsheet.getActiveRange().getColumn(), spreadsheet.getActiveRange().getNumColumns());
+  spreadsheet.getRange('D:D').activate();
+  spreadsheet.getActiveRangeList().clear({contentsOnly: true, skipFilteredRows: true});
+  spreadsheet.getActiveSheet().deleteColumns(spreadsheet.getActiveRange().getColumn(), spreadsheet.getActiveRange().getNumColumns());
+  spreadsheet.getRange('G:G').activate();
+  spreadsheet.getActiveRangeList().clear({contentsOnly: true, skipFilteredRows: true});
+  spreadsheet.getActiveSheet().deleteColumns(spreadsheet.getActiveRange().getColumn(), spreadsheet.getActiveRange().getNumColumns());
+  spreadsheet.getActiveRangeList().clear({contentsOnly: true, skipFilteredRows: true});
+  spreadsheet.getActiveSheet().deleteColumns(spreadsheet.getActiveRange().getColumn(), spreadsheet.getActiveRange().getNumColumns());
+  spreadsheet.getActiveRangeList().clear({contentsOnly: true, skipFilteredRows: true});
+  spreadsheet.getActiveSheet().deleteColumns(spreadsheet.getActiveRange().getColumn(), spreadsheet.getActiveRange().getNumColumns());
+  spreadsheet.getRange('H:H').activate();
+  spreadsheet.getActiveRangeList().clear({contentsOnly: true, skipFilteredRows: true});
+  spreadsheet.getActiveSheet().deleteColumns(spreadsheet.getActiveRange().getColumn(), spreadsheet.getActiveRange().getNumColumns());
+  spreadsheet.getRange('I:I').activate();
+  spreadsheet.getActiveRangeList().clear({contentsOnly: true, skipFilteredRows: true});
+  spreadsheet.getRange('M:M').activate();
+  var currentCell = spreadsheet.getCurrentCell();
+  spreadsheet.getSelection().getNextDataRange(SpreadsheetApp.Direction.NEXT).activate();
+  currentCell.activateAsCurrentCell();
+  spreadsheet.getActiveSheet().deleteColumns(spreadsheet.getActiveRange().getColumn(), spreadsheet.getActiveRange().getNumColumns());
+  spreadsheet.getActiveSheet().moveColumns(spreadsheet.getRange('L:L'), 9);
+  spreadsheet.getRange('I1').activate();
+  spreadsheet.getCurrentCell().setValue('Label');
+  spreadsheet.getRange('J1').activate();
+  spreadsheet.getCurrentCell().setValue('Artist');
+  spreadsheet.getRange('J2').activate();
+  sheet = spreadsheet.getActiveSheet();
+  sheet.getRange(spreadsheet.getCurrentCell().getRow(), 1, 1, sheet.getMaxColumns()).activate();
+  spreadsheet.getActiveSheet().setFrozenRows(1);
+  sheet = spreadsheet.getActiveSheet();
+  sheet.getRange(spreadsheet.getCurrentCell().getRow() + 153, 1, 1, sheet.getMaxColumns()).activate();
+  spreadsheet.getActiveSheet().moveRows(spreadsheet.getActiveRange(), spreadsheet.getActiveRange().getLastRow() + 247);
+  spreadsheet.getCurrentCell().offset(-1, 7).activate();
+  //spreadsheet.getCurrentCell().setFormulaR1C1('=SUM(R[-397]C[0]:R[-9]C[0])');
+  sheet = spreadsheet.getActiveSheet();
+  sheet.getRange(1, spreadsheet.getCurrentCell().getColumn(), sheet.getMaxRows(), 1).activate();
+  spreadsheet.getActiveRangeList().setNumberFormat('[$£-809]#,##0.00');
+  sheet = spreadsheet.getActiveSheet();
+  sheet.getRange(spreadsheet.getCurrentCell().getRow(), 1, 1, sheet.getMaxColumns()).activate();
+  spreadsheet.getActiveRangeList().setBackground('#000000')
+  .setFontColor('#ffffff');
+  spreadsheet.getCurrentCell().offset(0, 6).activate();
+  spreadsheet.getActiveRangeList().setBackground('#980000');
+  spreadsheet.getCurrentCell().offset(0, 5).activate();
+  spreadsheet.getCurrentCell().setValue('Tr. Type');
+  spreadsheet.getCurrentCell().offset(1, -3).activate();
+  spreadsheet.getCurrentCell().setFormulaR1C1('=R[0]C[-1]/2');
+  var destinationRange = spreadsheet.getActiveRange().offset(0, 0, 2);
+  spreadsheet.getActiveRange().autoFill(destinationRange, SpreadsheetApp.AutoFillSeries.DEFAULT_SERIES);
+  spreadsheet.getCurrentCell().offset(0, 0, 2, 1).activate();
+  destinationRange = spreadsheet.getActiveRange().offset(0, 0, 396);
+  spreadsheet.getActiveRange().autoFill(destinationRange, SpreadsheetApp.AutoFillSeries.DEFAULT_SERIES);
+  spreadsheet.getCurrentCell().offset(0, 1).activate();
+  spreadsheet.getCurrentCell().setFormulaR1C1('=R[0]C[-2]/2');
+  destinationRange = spreadsheet.getActiveRange().offset(0, 0, 396);
+  spreadsheet.getActiveRange().autoFill(destinationRange, SpreadsheetApp.AutoFillSeries.DEFAULT_SERIES);
+  spreadsheet.getCurrentCell().offset(0, -1).activate();
+  spreadsheet.getCurrentCell().setFormulaR1C1('=IF(R[0]C[-1]=0,"",R[0]C[-1]/2)');
+  destinationRange = spreadsheet.getActiveRange().offset(0, 0, 14);
+  spreadsheet.getActiveRange().autoFill(destinationRange, SpreadsheetApp.AutoFillSeries.DEFAULT_SERIES);
+  spreadsheet.getCurrentCell().offset(0, 0, 14, 1).activate();
+  destinationRange = spreadsheet.getActiveRange().offset(0, 0, 15);
+  spreadsheet.getActiveRange().autoFill(destinationRange, SpreadsheetApp.AutoFillSeries.DEFAULT_SERIES);
+  spreadsheet.getCurrentCell().offset(0, 0, 15, 1).activate();
+  destinationRange = spreadsheet.getActiveRange().offset(0, 0, 396);
+  spreadsheet.getActiveRange().autoFill(destinationRange, SpreadsheetApp.AutoFillSeries.DEFAULT_SERIES);
+  spreadsheet.getCurrentCell().offset(0, 1).activate();
+  spreadsheet.getCurrentCell().setFormulaR1C1('=IF(R[0]C[-2]=0,"",R[0]C[-2]/2)');
+  destinationRange = spreadsheet.getActiveRange().offset(0, 0, 396);
+  spreadsheet.getActiveRange().autoFill(destinationRange, SpreadsheetApp.AutoFillSeries.DEFAULT_SERIES);
+  spreadsheet.getCurrentCell().offset(0, 0, 396, 1).activate();
+  spreadsheet.getActiveSheet().setColumnWidth(8, 76);
+  spreadsheet.getActiveSheet().setColumnWidth(12, 92);
+  spreadsheet.getActiveSheet().setColumnWidth(11, 82);
+  spreadsheet.getActiveSheet().setColumnWidth(10, 86);
+  spreadsheet.getActiveSheet().setColumnWidth(9, 91);
+  spreadsheet.getActiveSheet().setColumnWidth(4, 153);
+  spreadsheet.getActiveSheet().setColumnWidth(4, 173);
+  spreadsheet.getActiveSheet().setColumnWidth(4, 205);
+  spreadsheet.getActiveSheet().setColumnWidth(1, 142);
+
+  // Second Step Formula by Fab
+  var spreadsheet = SpreadsheetApp.getActive();
+  spreadsheet.getRange('F8').activate();
+  spreadsheet.getRange('A:A').activate();
+  spreadsheet.getActiveRangeList().setNumberFormat('dd/MM/yyyy HH:mm:ss');
+  spreadsheet.getRange('I:I').activate();
+  spreadsheet.getActiveRangeList().setNumberFormat('[$£-809]#,##0.00');
+  spreadsheet.getRange('J:J').activate();
+  spreadsheet.getActiveRangeList().setNumberFormat('[$£-809]#,##0.00');
+
+  
+
+  // This function searches for the word "Totals:" in column A and clears the row in column H if found
+
+  var sheet = SpreadsheetApp.getActiveSheet(); // Get the active sheet
+  var range = sheet.getRange("A:A"); // Get the range of column A
+  var values = range.getValues(); // Get the values of column A as a 2D array
+  for (var i = 0; i < values.length; i++) { // Loop through the values
+    if (values[i][0] == "Totals:") { // If the value is "Totals:"
+      sheet.getRange(i+1, 8).clear(); // Clear the row in column H (index 8)
+    }
+  }
+
+    /**Sum Function */
+
+  // Get the active spreadsheet
+  var spreadsheet = SpreadsheetApp.getActive();
+  // Get the current sheet
+  var sheet = spreadsheet.getActiveSheet(); // Change this line
+ // Get the range of cells that have data in the sheet
+  var dataRange = sheet.getDataRange();
+  // Get the values as a 2D array
+  var values = dataRange.getValues();
+  // Initialize a variable to store the last row
+  var lastRow = 0;
+  // Loop through the array
+  for (var i = 0; i < values.length; i++) {
+    // Get the value in column H
+    var value = values[i][7]; // Change this to your column index minus 1
+    // Check if the value is not empty
+    if (value !== "") {
+      // Update the last row
+      lastRow = i + 1;
+    }
+  }
+  // Get the cell below the last row
+  var sumCell = sheet.getRange("H" + (lastRow + 1)); // Change this to your column name
+  // Set the formula for the sum using A1 notation
+  sumCell.setFormula("=SUM(H1:H" + lastRow + ")");
+
+  // Function Replace by Fab ***********************************************************
+
+ // Get the active spreadsheet
+  var spreadsheet = SpreadsheetApp.getActive();
+  // Get the current sheet
+  var sheet = spreadsheet.getActiveSheet(); // Change this line
+  // Get the column range by name or index
+  var column = sheet.getRange("F2:F"); // Change this to your column name
+  // Get the values as a 2D array
+  var values = column.getValues();
+  // Loop through the array
+  for (var i = 0; i < values.length; i++) {
+    // Get the cell value
+    var cell = values[i][0];
+    // Use the replaceChar function to replace the character
+    var newCell = replaceChar(cell);
+    // Assign the new value to the array
+    values[i][0] = newCell;
+  }
+  // Set the values back to the column range
+  column.setValues(values);
+  }
+
+  // Define a function that takes a string as an argument
+  function replaceChar(str) {
+    // Use the replace method with a regular expression to match the "�" character globally
+    // Replace it with a blank space and return the new string
+    return str.replace(/�/g, " ");
+  }
+
+  // Insert blank row ************************
+
+  // Get the active spreadsheet and sheet
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = ss.getActiveSheet();
+
+    // Find the row number of the "Totals:" line
+    var range = sheet.getDataRange();
+    var values = range.getValues();
+    var totalsRow = -1;
+    for (var i = 0; i < values.length; i++) {
+      if (values[i][0] == "Totals:") {
+        totalsRow = i + 1;
+        break;  
+      }
+    }
+    // Insert a blank row above the "totals:" line
+    if (totalsRow > -1) {
+      sheet.insertRowsBefore(totalsRow, 1);
+    }
+};
